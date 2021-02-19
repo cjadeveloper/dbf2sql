@@ -1,0 +1,26 @@
+{
+  "editor.formatOnSave": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": ".venv/Scripts/flake8helled",
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.terminal.activateEnvironment": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "black",
+  "[python]": {
+    /* https://github.com/Microsoft/vscode-python/issues/1883#issuecomment-395216906 */
+    "editor.formatOnPaste": false,
+  },
+  /* https://flakehell.readthedocs.io/ide.html#ide-integration */
+  "cornflakes.linter.executablePath": "flake8hell",
+  "cornflakes.linter.run": "onType",
+  "licenser.author": "Cristian Javier Azulay",
+  "licenser.license": "MIT",
+  "licenser.projectName": "dbf2sql",
+  "licenser.disableAutoHeaderInsertion": true,
+  "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe",
+  "terminal.integrated.shellArgs.windows": [
+    "/k E:\\cmder\\vendor\\init.bat",
+  ],
+}

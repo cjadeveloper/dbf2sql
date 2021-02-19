@@ -1,0 +1,6 @@
+[dbf]
+path = .
+encoding = cp1252
+
+[dbcnx]
+cnnstring = mssql+pyodbc://<dsnname>
