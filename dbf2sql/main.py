@@ -21,7 +21,7 @@ MY_DNS = get_config_setting(CONFIG_FILE, "dbcnx", "cnxstring")
 
 # Main Program
 @click.group()
-@click.version_option(version=__version__)
+@click.version_option(prog_name="dbf2sql", version=__version__)
 def cli():
     """Convert DBF files in SQL Server tables."""
 

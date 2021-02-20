@@ -121,7 +121,7 @@ python-versions = ">=3.6.1"
 name = "click"
 version = "7.1.2"
 description = "Composable command line interface toolkit"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -918,7 +918,7 @@ nvim = ["neovim", "pynvim"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "157f068884c15914814e9311d8f6f4dc7427eb8249408cb8b854d984d02e3521"
+content-hash = "58f47eb02e9f1a3b0522abe5e9aff9907741902b8cf240559c41c3a14a92785f"
 
 [metadata.files]
 alembic = [

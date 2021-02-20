@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dbf2sql"
-version = "0.1.1"
+version = "0.1.1-dev1"
 description = "Convert DBF files to SQL tables"
 authors = ["Cristian Javier Azulay <cjadeveloper@gmail.com>"]
 license = "MIT"
@@ -19,6 +19,7 @@ dbfread = "^2.0.7"
 dataset = "^1.4.1"
 pyodbc = { version = "^4.0.30", optional = true}
 pefile = "^2019.4.18"
+click = "^7.1.2"
 
 [tool.poetry.extras]
 ipy = ["ipython"]
