@@ -40,6 +40,7 @@ pyinstaller = "^4.2"
 pytest-picked = "^0.4.6"
 pytest-sugar = "^0.9.4"
 pytest-clarity = "^0.3.0-alpha.0"
+pytest-cov = "^2.11.1"
 
 [tool.poetry.scripts]
 dbf2sql = 'dbf2sql:cli'
