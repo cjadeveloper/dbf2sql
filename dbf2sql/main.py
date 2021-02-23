@@ -79,16 +79,16 @@ def convert(filename, key):
     from dbfread import DBFNotFound
 
     if PATH_DBF is None:
-        raise Exception("Path to DBF files not found! Check it!")
+        raise Exception("<`-´> Ouch! Path to DBF files not found! Check it!")
 
     if MY_DNS is None:
-        raise Exception("Data Source Name not exists!")
+        raise Exception("<`-´> Ouch! Data Source Name not exists!")
 
     try:
         dbf = DBF(PATH_DBF + filename, encoding=ENCODING)
         sql_tablename = PurePosixPath(filename).stem
     except DBFNotFound:
-        click.echo("DBF File Not Found. Check path in config.ini")
+        click.echo("<`-´> Ouch! DBF File Not Found. Check path in config.ini")
 
     db = dataset.connect(MY_DNS)
     db.begin()
@@ -108,7 +108,7 @@ def convert(filename, key):
         db.rollback()
     finally:
         db.close()
-        click.echo(f"{sql_tablename} has been updated succesfully!")
+        click.echo(f"<°o°> Hooray! {sql_tablename} has been updated succesfully!")
 
 
 # @cli.command("execute")
