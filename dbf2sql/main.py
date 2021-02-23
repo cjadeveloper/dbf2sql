@@ -4,13 +4,12 @@ from pathlib import PurePosixPath
 import click
 
 from .__version__ import __version__
+from .config.settings import create_config_file
 from .config.settings import get_config_setting
-
-# from .config.settings import create_config_file, list_config_setting
-
+from .config.settings import list_config_setting
 
 # Directorio Raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path().cwd()
 # Archivo de configuraciones de cliente
 CONFIG_FILE = Path(BASE_DIR / "config.ini")
 
@@ -49,29 +48,23 @@ def testdb():
         db.close()
 
 
-# @cli.command("config")
-# @click.option(
-#     "--init", "-i", is_flag=True, help="Create a basic config.ini file in the current directory."
-# )
-# @click.option("--list", "-l", "list_", is_flag=True, help="List configuration settings.")
-# def config(init, list_):
-#     """
-#     Manages configurations settings
-#     """
-#     if init:
-#         if not Path(CONFIG_FILE).exists:
-#             click.echo("Creates a basic config.ini file in the current directory if doesn't exist")
-#             create_config_file(CONFIG_FILE)
+@cli.command("config")
+@click.option(
+    "--init", "-i", is_flag=True, help="Create a basic config.ini file in the current directory."
+)
+@click.option("--list", "-l", "list_", is_flag=True, help="List configuration settings.")
+def config(init, list_):
+    """
+    Manages configurations settings
+    """
+    if init:
+        if not Path(CONFIG_FILE).exists():
+            create_config_file(CONFIG_FILE)
 
-#         click.echo("List the current configuration.")
-#         list_config_setting(CONFIG_FILE)
+        list_config_setting(CONFIG_FILE)
 
-#     elif list_:
-#         click.echo("List the current configuration.")
-#         list_config_setting(CONFIG_FILE)
-#     else:
-#         click.echo("No option. List the current configuration.")
-#         list_config_setting(CONFIG_FILE)
+    elif list_:
+        list_config_setting(CONFIG_FILE)
 
 
 @cli.command("convert")

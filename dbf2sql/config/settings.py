@@ -7,6 +7,10 @@ import click
 
 def create_config_file(path):
     """Create config.ini file"""
+    click.secho(
+        "\nCreates a basic config.ini file in the current directory if doesn't exist",
+        fg="bright_blue",
+    )
 
     config = configparser.ConfigParser()
 
@@ -28,7 +32,7 @@ def create_config_file(path):
 def _get_config(path):
     """Return the config object"""
 
-    if not Path(path).exists:
+    if not Path(path).exists():
         create_config_file(path)
 
     config = configparser.ConfigParser()
@@ -47,10 +51,12 @@ def get_config_setting(path, section, setting, fallback=None):
 def list_config_setting(path):
     try:
         config_file = open(path, "r")
+        click.secho("\nList the current configuration:", fg="bright_blue")
+        print()
         for line in config_file:
-            click.echo(line)
+            print(line, end="")
     except IOError:
-        print("An IOError has occurred!")
+        print("\n<`-´> Ouch! An IOError has occurred!")
     finally:
         config_file.close()
 
@@ -64,7 +70,9 @@ def update_config_setting(path, section, setting, value):
         with open(path, "w") as ini_file:
             config.write(ini_file)
     except IOError:
-        print("An IOError has occurred!")
+        print("\n<`-´> Ouch! An IOError has occurred!")
+    finally:
+        config.close()
 
 
 def delete_config_setting(path, section, setting):
@@ -76,4 +84,6 @@ def delete_config_setting(path, section, setting):
         with open(path, "w") as ini_file:
             config.write(ini_file)
     except IOError:
-        print("An IOError has occurred!")
+        print("\n<`-´> Ouch! An IOError has occurred!")
+    finally:
+        config.close()
