@@ -19,8 +19,4 @@
   "licenser.license": "MIT",
   "licenser.projectName": "dbf2sql",
   "licenser.disableAutoHeaderInsertion": true,
-  "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe",
-  "terminal.integrated.shellArgs.windows": [
-    "/k E:\\cmder\\vendor\\init.bat",
-  ],
 }
