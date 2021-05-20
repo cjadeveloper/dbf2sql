@@ -13,7 +13,7 @@
     "editor.formatOnPaste": false,
   },
   /* https://flakehell.readthedocs.io/ide.html#ide-integration */
-  "cornflakes.linter.executablePath": "flake8hell",
+  "cornflakes.linter.executablePath": ".venv/Scripts/flake8helled",
   "cornflakes.linter.run": "onType",
   "licenser.author": "Cristian Javier Azulay",
   "licenser.license": "MIT",
